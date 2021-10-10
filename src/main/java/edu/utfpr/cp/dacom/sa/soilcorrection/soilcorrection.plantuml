@@ -1,0 +1,216 @@
+@startuml
+
+title __SOILCORRECTION's Class Diagram__\n
+
+  namespace edu.utfpr.cp.dacom.sa.soilcorrection {
+    interface edu.utfpr.cp.dacom.sa.soilcorrection.Conversao.Conversao {
+        {abstract} + converte()
+    }
+  }
+  
+
+  namespace edu.utfpr.cp.dacom.sa.soilcorrection {
+    class edu.utfpr.cp.dacom.sa.soilcorrection.Conversao.ConverteCMolcDm3EmMgDm3 {
+        + converte()
+    }
+  }
+  
+
+  namespace edu.utfpr.cp.dacom.sa.soilcorrection {
+    class edu.utfpr.cp.dacom.sa.soilcorrection.Conversao.ConverteKgHaEmK2O {
+        + converte()
+    }
+  }
+  
+
+  namespace edu.utfpr.cp.dacom.sa.soilcorrection {
+    class edu.utfpr.cp.dacom.sa.soilcorrection.Conversao.ConverteKgHaEmP2O5 {
+        + converte()
+    }
+  }
+  
+
+  namespace edu.utfpr.cp.dacom.sa.soilcorrection {
+    class edu.utfpr.cp.dacom.sa.soilcorrection.Conversao.ConverteMgDm3EmKgHa {
+        + converte()
+    }
+  }
+  
+
+  namespace edu.utfpr.cp.dacom.sa.soilcorrection {
+    class edu.utfpr.cp.dacom.sa.soilcorrection.Correcao.CorrecaoCalcioMagnesio {
+        + calculaQuantidadeAplicar()
+    }
+  }
+  
+
+  namespace edu.utfpr.cp.dacom.sa.soilcorrection {
+    class edu.utfpr.cp.dacom.sa.soilcorrection.Correcao.CorrecaoFosforo {
+    }
+  }
+  
+
+  namespace edu.utfpr.cp.dacom.sa.soilcorrection {
+    class edu.utfpr.cp.dacom.sa.soilcorrection.Correcao.CorrecaoPotassio {
+        + calculaNecessidadeAdicionarCMolcDm3()
+    }
+  }
+  
+
+  namespace edu.utfpr.cp.dacom.sa.soilcorrection {
+    class edu.utfpr.cp.dacom.sa.soilcorrection.EquilibrioCorrecaoCTC {
+        ~ calculaCTCCmol()
+        ~ calculaCarbono()
+        ~ calculaMOPercentual()
+        ~ calculaSCmol()
+        ~ calculaVPercentual()
+    }
+  }
+  
+
+  namespace edu.utfpr.cp.dacom.sa.soilcorrection {
+    enum FonteCalcioMagnesio {
+      CALCARIO_CALCITICO
+      CALCARIO_CONCHA
+      CALCARIO_DOLOMITICO
+      CALCARIO_MAGNESIANO
+      GESSO_AGRICOLA
+      HIDROXIDO_CALCIO
+      nutrientesAdicionais
+      teorFonte
+    }
+  }
+  
+
+  namespace edu.utfpr.cp.dacom.sa.soilcorrection {
+    enum FonteFosforo {
+      MAP
+      SUPERFOSFATO_SIMPLES
+      SUPERFOSFATO_TRIPO
+      nutrientesAdicionais
+      teorFonte
+    }
+  }
+  
+
+  namespace edu.utfpr.cp.dacom.sa.soilcorrection {
+    enum FontePotassio {
+      CLORETO_POTASSIO
+      SULFATO_POTASSIO
+      SULFATO_POTASSIO_MAGNESIO
+      nutrientesAdicionais
+      teorFonte
+    }
+  }
+  
+
+  namespace edu.utfpr.cp.dacom.sa.soilcorrection {
+    interface edu.utfpr.cp.dacom.sa.soilcorrection.Correcao.ICorrecaoNutriente {
+        + calculaCusto()
+        + calculaEficienciaNutriente()
+        + getNutrientesAdicionais()
+    }
+  }
+  
+
+  namespace edu.utfpr.cp.dacom.sa.soilcorrection {
+    interface edu.utfpr.cp.dacom.sa.soilcorrection.Correcao.ICorrecaoNutrienteQuantidadeAplicar {
+        + calculaQuantidadeAplicar()
+    }
+  }
+  
+
+  namespace edu.utfpr.cp.dacom.sa.soilcorrection {
+    interface edu.utfpr.cp.dacom.sa.soilcorrection.Fonte_Nutriente.IFonteNutriente {
+        {abstract} + getNutrientesAdicionais()
+        {abstract} + getTeorFonte()
+    }
+  }
+  
+
+  namespace edu.utfpr.cp.dacom.sa.soilcorrection {
+    enum NomeNutrienteAdicional {
+      CALCIO
+      ENXOFRE
+      MAGNESIO
+      NITROGENIO
+    }
+  }
+  
+
+  namespace edu.utfpr.cp.dacom.sa.soilcorrection {
+    class edu.utfpr.cp.dacom.sa.soilcorrection.Fonte_Nutriente.NutrienteAdicional {
+        - correcaoAdicional : double
+        - teorNutriente : double
+        + NutrienteAdicional()
+        + getCorrecaoAdicional()
+        + getTeorNutriente()
+        + setCorrecaoAdicional()
+    }
+  }
+  
+
+  namespace edu.utfpr.cp.dacom.sa.soilcorrection {
+    class edu.utfpr.cp.dacom.sa.soilcorrection.Nutriente.NutrientesCTC {
+        - aluminio : double
+        - aluminioHidrogenio : double
+        - calcio : double
+        - enxofre : double
+        - fosforo : double
+        - magnesio : double
+        - potassio : double
+        + NutrientesCTC()
+        + aluminio()
+        + aluminioHidrogenio()
+        {static} + builder()
+        + calcio()
+        + enxofre()
+        + fosforo()
+        + magnesio()
+        + potassio()
+        ~ NutrientesCTC()
+    }
+  }
+  
+
+  namespace edu.utfpr.cp.dacom.sa.soilcorrection {
+    class edu.utfpr.cp.dacom.sa.soilcorrection.Nutriente.NutrientesCTC.NutrientesCTCBuilder {
+        + build()
+        + toString()
+        ~ NutrientesCTCBuilder()
+    }
+  }
+  
+
+  namespace edu.utfpr.cp.dacom.sa.soilcorrection {
+    enum TexturaSolo {
+      ARGILOSO
+      TEXTURA_MEDIA
+    }
+  }
+  
+
+  edu.utfpr.cp.dacom.sa.soilcorrection.Conversao.ConverteCMolcDm3EmMgDm3 .up.|> edu.utfpr.cp.dacom.sa.soilcorrection.Conversao.Conversao
+  edu.utfpr.cp.dacom.sa.soilcorrection.Conversao.ConverteKgHaEmK2O .up.|> edu.utfpr.cp.dacom.sa.soilcorrection.Conversao.Conversao
+  edu.utfpr.cp.dacom.sa.soilcorrection.Conversao.ConverteKgHaEmP2O5 .up.|> edu.utfpr.cp.dacom.sa.soilcorrection.Conversao.Conversao
+  edu.utfpr.cp.dacom.sa.soilcorrection.Conversao.ConverteMgDm3EmKgHa .up.|> edu.utfpr.cp.dacom.sa.soilcorrection.Conversao.Conversao
+  edu.utfpr.cp.dacom.sa.soilcorrection.Correcao.CorrecaoCalcioMagnesio .up.|> edu.utfpr.cp.dacom.sa.soilcorrection.Correcao.ICorrecaoNutriente
+  edu.utfpr.cp.dacom.sa.soilcorrection.Correcao.CorrecaoFosforo .up.|> edu.utfpr.cp.dacom.sa.soilcorrection.Correcao.ICorrecaoNutriente
+  edu.utfpr.cp.dacom.sa.soilcorrection.Correcao.CorrecaoFosforo .up.|> edu.utfpr.cp.dacom.sa.soilcorrection.Correcao.ICorrecaoNutrienteQuantidadeAplicar
+  edu.utfpr.cp.dacom.sa.soilcorrection.Correcao.CorrecaoPotassio .up.|> edu.utfpr.cp.dacom.sa.soilcorrection.Correcao.ICorrecaoNutriente
+  edu.utfpr.cp.dacom.sa.soilcorrection.Correcao.CorrecaoPotassio .up.|> edu.utfpr.cp.dacom.sa.soilcorrection.Correcao.ICorrecaoNutrienteQuantidadeAplicar
+  edu.utfpr.cp.dacom.sa.soilcorrection.Fonte_Nutriente.FonteCalcioMagnesio .up.|> edu.utfpr.cp.dacom.sa.soilcorrection.Fonte_Nutriente.IFonteNutriente
+  edu.utfpr.cp.dacom.sa.soilcorrection.Fonte_Nutriente.FonteFosforo .up.|> edu.utfpr.cp.dacom.sa.soilcorrection.Fonte_Nutriente.IFonteNutriente
+  edu.utfpr.cp.dacom.sa.soilcorrection.Fonte_Nutriente.FontePotassio .up.|> edu.utfpr.cp.dacom.sa.soilcorrection.Fonte_Nutriente.IFonteNutriente
+  edu.utfpr.cp.dacom.sa.soilcorrection.Fonte_Nutriente.NutrienteAdicional o-- edu.utfpr.cp.dacom.sa.soilcorrection.Fonte_Nutriente.NomeNutrienteAdicional : nome
+  edu.utfpr.cp.dacom.sa.soilcorrection.Nutriente.NutrientesCTC +-down- edu.utfpr.cp.dacom.sa.soilcorrection.Nutriente.NutrientesCTC.NutrientesCTCBuilder
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
