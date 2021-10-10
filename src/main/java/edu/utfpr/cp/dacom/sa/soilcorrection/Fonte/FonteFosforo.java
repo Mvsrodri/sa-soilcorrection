@@ -1,4 +1,4 @@
-package edu.utfpr.cp.dacom.sa.soilcorrection.Fonte_Nutriente;
+package edu.utfpr.cp.dacom.sa.soilcorrection.Fonte;
 
 import java.util.Set;
 

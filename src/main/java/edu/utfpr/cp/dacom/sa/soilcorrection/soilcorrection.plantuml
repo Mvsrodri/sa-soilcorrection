@@ -121,7 +121,7 @@ title __SOILCORRECTION's Class Diagram__\n
   
 
   namespace edu.utfpr.cp.dacom.sa.soilcorrection {
-    interface edu.utfpr.cp.dacom.sa.soilcorrection.Fonte_Nutriente.IFonteNutriente {
+    interface edu.utfpr.cp.dacom.sa.soilcorrection.Fonte.IFonteNutriente {
         {abstract} + getNutrientesAdicionais()
         {abstract} + getTeorFonte()
     }
@@ -199,9 +199,9 @@ title __SOILCORRECTION's Class Diagram__\n
   edu.utfpr.cp.dacom.sa.soilcorrection.Correcao.CorrecaoFosforo .up.|> edu.utfpr.cp.dacom.sa.soilcorrection.Correcao.ICorrecaoNutrienteQuantidadeAplicar
   edu.utfpr.cp.dacom.sa.soilcorrection.Correcao.CorrecaoPotassio .up.|> edu.utfpr.cp.dacom.sa.soilcorrection.Correcao.ICorrecaoNutriente
   edu.utfpr.cp.dacom.sa.soilcorrection.Correcao.CorrecaoPotassio .up.|> edu.utfpr.cp.dacom.sa.soilcorrection.Correcao.ICorrecaoNutrienteQuantidadeAplicar
-  edu.utfpr.cp.dacom.sa.soilcorrection.Fonte_Nutriente.FonteCalcioMagnesio .up.|> edu.utfpr.cp.dacom.sa.soilcorrection.Fonte_Nutriente.IFonteNutriente
-  edu.utfpr.cp.dacom.sa.soilcorrection.Fonte_Nutriente.FonteFosforo .up.|> edu.utfpr.cp.dacom.sa.soilcorrection.Fonte_Nutriente.IFonteNutriente
-  edu.utfpr.cp.dacom.sa.soilcorrection.Fonte_Nutriente.FontePotassio .up.|> edu.utfpr.cp.dacom.sa.soilcorrection.Fonte_Nutriente.IFonteNutriente
+  edu.utfpr.cp.dacom.sa.soilcorrection.Fonte.FonteCalcioMagnesio .up.|> edu.utfpr.cp.dacom.sa.soilcorrection.Fonte.IFonteNutriente
+  edu.utfpr.cp.dacom.sa.soilcorrection.Fonte.FonteFosforo .up.|> edu.utfpr.cp.dacom.sa.soilcorrection.Fonte.IFonteNutriente
+  edu.utfpr.cp.dacom.sa.soilcorrection.Fonte.FontePotassio .up.|> edu.utfpr.cp.dacom.sa.soilcorrection.Fonte.IFonteNutriente
   edu.utfpr.cp.dacom.sa.soilcorrection.Nutriente.NutrienteAdicional o-- edu.utfpr.cp.dacom.sa.soilcorrection.Nutriente.NomeNutrienteAdicional : nome
   edu.utfpr.cp.dacom.sa.soilcorrection.Nutriente.NutrientesCTC +-down- edu.utfpr.cp.dacom.sa.soilcorrection.Nutriente.NutrientesCTC.NutrientesCTCBuilder
 

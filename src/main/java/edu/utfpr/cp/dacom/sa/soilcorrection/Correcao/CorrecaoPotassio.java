@@ -1,6 +1,6 @@
 package edu.utfpr.cp.dacom.sa.soilcorrection.Correcao;
 
-import edu.utfpr.cp.dacom.sa.soilcorrection.Fonte_Nutriente.FontePotassio;
+import edu.utfpr.cp.dacom.sa.soilcorrection.Fonte.FontePotassio;
 
 public class CorrecaoPotassio
         implements 
