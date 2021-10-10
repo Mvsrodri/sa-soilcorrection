@@ -2,6 +2,8 @@ package edu.utfpr.cp.dacom.sa.soilcorrection.Fonte_Nutriente;
 
 import java.util.Set;
 
+import edu.utfpr.cp.dacom.sa.soilcorrection.Nutriente.NomeNutrienteAdicional;
+import edu.utfpr.cp.dacom.sa.soilcorrection.Nutriente.NutrienteAdicional;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
@@ -19,7 +21,7 @@ public enum FontePotassio
     SULFATO_POTASSIO_MAGNESIO(
         0.22, 
         Set.of(
-            new NutrienteAdicional(NomeNutrienteAdicional.ENXOFRE, 0.22), 
+            new NutrienteAdicional(NomeNutrienteAdicional.ENXOFRE, 0.22),
             new NutrienteAdicional(NomeNutrienteAdicional.MAGNESIO, 0.18)));
     
     private final double teorFonte;
